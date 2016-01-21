@@ -447,6 +447,10 @@ var GeoQuery = function (firebaseRef, queryCriteria) {
       var keys = Object.keys(_locationsTracked);
       var numKeys = keys.length;
       for (var i = 0; i < numKeys; ++i) {
+        //If this query has been cancelled in the callback, break now
+        if (!_locationsTracked) {
+          break;
+        }
         var key = keys[i];
         var locationDict = _locationsTracked[key];
         if (locationDict.isInQuery) {
