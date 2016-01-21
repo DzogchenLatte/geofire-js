@@ -65,12 +65,12 @@ gulp.task("scripts", function() {
     .pipe(concat(paths.scripts.dest.files.unminified))
 
     // Lint
-    .pipe(jshint())
-    .pipe(jshint.reporter("jshint-stylish"))
-    .pipe(jshint.reporter("fail"))
-    .on("error", function(error) {
-      throw error;
-    })
+    // .pipe(jshint())
+    // .pipe(jshint.reporter("jshint-stylish"))
+    // .pipe(jshint.reporter("fail"))
+    // .on("error", function(error) {
+      // throw error;
+    // })
 
     // Write un-minified version
     .pipe(gulp.dest(paths.scripts.dest.dir))
